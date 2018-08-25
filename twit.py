@@ -147,7 +147,7 @@ def post_local_media():
     chrome_driver=r"C:\chromedriver\chromedriver.exe"
 
     if 'DYNO' in os.environ:
-        chrome_driver = os.environ.get('GOOGLE_CHROME_BIN', "chromedriver")
+        chrome_driver = os.environ.get('GOOGLE_CHROME_BIN', "chromedriver") # hmmm
 
     MegaUtil.direct_download(random.choice(links_list), tmpFolder, chrome_driver)
 
