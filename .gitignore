@@ -1,0 +1,8 @@
+dwnld/
+tmp/
+__pycache__/
+secret.py
+links.txt
+*.iml
+.idea/
+__init__.py
