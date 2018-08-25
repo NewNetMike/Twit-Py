@@ -1,9 +1,0 @@
-__pycache__/
-.idea/
-*.iml
-dwnld/
-tmp/
-__init__.py
-Procfile
-data/
-data/*.xml
