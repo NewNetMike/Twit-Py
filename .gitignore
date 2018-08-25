@@ -1,0 +1,8 @@
+__pycache__/
+.idea/
+data/
+data/*.xml
+dwnld/
+tmp/
+links.txt
+*.iml
