@@ -155,14 +155,15 @@ def post_local_media():
         options = webdriver.ChromeOptions()
         options.binary_location = chrome_bin
         options.add_argument('headless')
+        options.add_argument("--no-sandbox")
         options.add_argument('window-size=1366x768')
 
     for retry in range(5):
         try:
             MegaUtil.direct_download(random.choice(links_list), tmpFolder, chrome_driver, options=options)
             break
-        except:
-            print("Failed to make webdriver, trying again in 1 minute..")
+        except Exception as e:
+            print("Failed to make webdriver..." + str(e))
             helpers.rand_sleep(10,15)
 
     #
