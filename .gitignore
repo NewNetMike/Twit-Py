@@ -6,3 +6,5 @@ __pycache__/
 secret.py
 *.txt
 *.iml
+.idea/
+__init__.py
