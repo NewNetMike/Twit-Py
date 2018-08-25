@@ -3,3 +3,7 @@ __pycache__/
 *.iml
 dwnld/
 tmp/
+__init__.py
+Procfile
+data/
+data/*.xml
