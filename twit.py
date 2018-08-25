@@ -10,6 +10,7 @@ import xml.etree.ElementTree as ET
 import account
 import random
 from mega_util import MegaUtil
+from selenium import webdriver
 
 master_account = ""
 accounts_list = []
@@ -146,12 +147,19 @@ def post_local_media():
     tmpFolder = os.path.join(os.getcwd(), "tmp")
     chrome_driver=r"C:\chromedriver\chromedriver.exe"
 
+    options = None
     if 'DYNO' in os.environ:
         chrome_driver = CHROMEDRIVER_PATH = "/app/.chromedriver/bin/chromedriver"
 
+        chrome_bin = os.environ.get('GOOGLE_CHROME_BIN', "chromedriver")
+        options = webdriver.ChromeOptions()
+        options.binary_location = chrome_bin
+        options.add_argument('headless')
+        options.add_argument('window-size=1366x768')
+
     for retry in range(5):
         try:
-            MegaUtil.direct_download(random.choice(links_list), tmpFolder, chrome_driver)
+            MegaUtil.direct_download(random.choice(links_list), tmpFolder, chrome_driver, options=options)
             break
         except:
             print("Failed to make webdriver, trying again in 1 minute..")
