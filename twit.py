@@ -143,7 +143,13 @@ def post_local_media():
     with open("links.txt") as f:
         links_list = f.readlines()
 
-    MegaUtil.direct_download(random.choice(links_list), r"D:\MEGA\Code\Twit-Py\tmp", r"C:\chromedriver\chromedriver.exe")
+    tmpFolder = os.path.join(os.getcwd(), "tmp")
+    chrome_driver=r"C:\chromedriver\chromedriver.exe"
+
+    if 'DYNO' in os.environ:
+        chrome_driver = "/app/.chromedriver/bin/chromedriver"
+
+    MegaUtil.direct_download(random.choice(links_list), tmpFolder, chrome_driver)
 
     #
     # accnts = api.list_members(uname, lst)
