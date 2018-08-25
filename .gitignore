@@ -1,6 +1,4 @@
 dwnld/
-data/
-data/*.xml
 tmp/
 __pycache__/
 secret.py
