@@ -149,7 +149,13 @@ def post_local_media():
     if 'DYNO' in os.environ:
         chrome_driver = CHROMEDRIVER_PATH = "/app/.chromedriver/bin/chromedriver"
 
-    MegaUtil.direct_download(random.choice(links_list), tmpFolder, chrome_driver)
+    for retry in range(5):
+        try:
+            MegaUtil.direct_download(random.choice(links_list), tmpFolder, chrome_driver)
+            break
+        except:
+            print("Failed to make webdriver, trying again in 1 minute..")
+            helpers.rand_sleep(10,15)
 
     #
     # accnts = api.list_members(uname, lst)
