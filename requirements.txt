@@ -1,4 +1,4 @@
 git+https://github.com/mycxle/tweepy
 feedparser
-mega_util==0.1.1
+mega_util==0.1.2
 selenium
