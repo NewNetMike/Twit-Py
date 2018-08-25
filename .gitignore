@@ -4,7 +4,7 @@ data/*.xml
 tmp/
 __pycache__/
 secret.py
-*.txt
+links.txt
 *.iml
 .idea/
 __init__.py
